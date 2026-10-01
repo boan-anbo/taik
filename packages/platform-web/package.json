@@ -1,0 +1,14 @@
+{
+  "name": "@taik/platform-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Web (DOM) platform adapters for Taik capability interfaces",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@taik/capabilities": "*"
+  },
+  "files": [
+    "src"
+  ]
+}

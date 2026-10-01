@@ -1,0 +1,758 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		465605CE2EE402450060C14D /* TaikKeyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 465605C72EE402450060C14D /* TaikKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		465605962EE401D20060C14D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4656057F2EE401D00060C14D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 465605862EE401D00060C14D;
+			remoteInfo = Taik;
+		};
+		465605A02EE401D20060C14D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4656057F2EE401D00060C14D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 465605862EE401D00060C14D;
+			remoteInfo = Taik;
+		};
+		465605CC2EE402450060C14D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4656057F2EE401D00060C14D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 465605C62EE402450060C14D;
+			remoteInfo = TaikKeyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		465605C22EE402160060C14D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				465605CE2EE402450060C14D /* TaikKeyboard.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		465605872EE401D00060C14D /* Taik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taik.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		465605952EE401D20060C14D /* TaikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4656059F2EE401D20060C14D /* TaikUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaikUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		465605C72EE402450060C14D /* TaikKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TaikKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		465605CF2EE402450060C14D /* Exceptions for "TaikKeyboard" folder in "TaikKeyboard" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 465605C62EE402450060C14D /* TaikKeyboard */;
+		};
+		465607622EE40ADC0060C14D /* Exceptions for "Taik" folder in "Taik" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 465605862EE401D00060C14D /* Taik */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		465605892EE401D00060C14D /* Taik */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				465607622EE40ADC0060C14D /* Exceptions for "Taik" folder in "Taik" target */,
+			);
+			path = Taik;
+			sourceTree = "<group>";
+		};
+		465605982EE401D20060C14D /* TaikTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TaikTests;
+			sourceTree = "<group>";
+		};
+		465605A22EE401D20060C14D /* TaikUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TaikUITests;
+			sourceTree = "<group>";
+		};
+		465605C82EE402450060C14D /* TaikKeyboard */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				465605CF2EE402450060C14D /* Exceptions for "TaikKeyboard" folder in "TaikKeyboard" target */,
+			);
+			path = TaikKeyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		465605842EE401D00060C14D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		465605922EE401D20060C14D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4656059C2EE401D20060C14D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		465605C42EE402450060C14D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4656057E2EE401D00060C14D = {
+			isa = PBXGroup;
+			children = (
+				465605892EE401D00060C14D /* Taik */,
+				465605982EE401D20060C14D /* TaikTests */,
+				465605A22EE401D20060C14D /* TaikUITests */,
+				465605C82EE402450060C14D /* TaikKeyboard */,
+				465605882EE401D00060C14D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		465605882EE401D00060C14D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				465605872EE401D00060C14D /* Taik.app */,
+				465605952EE401D20060C14D /* TaikTests.xctest */,
+				4656059F2EE401D20060C14D /* TaikUITests.xctest */,
+				465605C72EE402450060C14D /* TaikKeyboard.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		465605862EE401D00060C14D /* Taik */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 465605A92EE401D20060C14D /* Build configuration list for PBXNativeTarget "Taik" */;
+			buildPhases = (
+				465605832EE401D00060C14D /* Sources */,
+				465605842EE401D00060C14D /* Frameworks */,
+				465605852EE401D00060C14D /* Resources */,
+				465605C22EE402160060C14D /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				465605CD2EE402450060C14D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				465605892EE401D00060C14D /* Taik */,
+			);
+			name = Taik;
+			packageProductDependencies = (
+			);
+			productName = Taik;
+			productReference = 465605872EE401D00060C14D /* Taik.app */;
+			productType = "com.apple.product-type.application";
+		};
+		465605942EE401D20060C14D /* TaikTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 465605AC2EE401D20060C14D /* Build configuration list for PBXNativeTarget "TaikTests" */;
+			buildPhases = (
+				465605912EE401D20060C14D /* Sources */,
+				465605922EE401D20060C14D /* Frameworks */,
+				465605932EE401D20060C14D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				465605972EE401D20060C14D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				465605982EE401D20060C14D /* TaikTests */,
+			);
+			name = TaikTests;
+			packageProductDependencies = (
+			);
+			productName = TaikTests;
+			productReference = 465605952EE401D20060C14D /* TaikTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4656059E2EE401D20060C14D /* TaikUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 465605AF2EE401D20060C14D /* Build configuration list for PBXNativeTarget "TaikUITests" */;
+			buildPhases = (
+				4656059B2EE401D20060C14D /* Sources */,
+				4656059C2EE401D20060C14D /* Frameworks */,
+				4656059D2EE401D20060C14D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				465605A12EE401D20060C14D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				465605A22EE401D20060C14D /* TaikUITests */,
+			);
+			name = TaikUITests;
+			packageProductDependencies = (
+			);
+			productName = TaikUITests;
+			productReference = 4656059F2EE401D20060C14D /* TaikUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		465605C62EE402450060C14D /* TaikKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 465605D02EE402450060C14D /* Build configuration list for PBXNativeTarget "TaikKeyboard" */;
+			buildPhases = (
+				465605C32EE402450060C14D /* Sources */,
+				465605C42EE402450060C14D /* Frameworks */,
+				465605C52EE402450060C14D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				465605C82EE402450060C14D /* TaikKeyboard */,
+			);
+			name = TaikKeyboard;
+			packageProductDependencies = (
+			);
+			productName = TaikKeyboard;
+			productReference = 465605C72EE402450060C14D /* TaikKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4656057F2EE401D00060C14D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					465605862EE401D00060C14D = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					465605942EE401D20060C14D = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 465605862EE401D00060C14D;
+					};
+					4656059E2EE401D20060C14D = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 465605862EE401D00060C14D;
+					};
+					465605C62EE402450060C14D = {
+						CreatedOnToolsVersion = 16.4;
+					};
+				};
+			};
+			buildConfigurationList = 465605822EE401D00060C14D /* Build configuration list for PBXProject "Taik" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4656057E2EE401D00060C14D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 465605882EE401D00060C14D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				465605862EE401D00060C14D /* Taik */,
+				465605942EE401D20060C14D /* TaikTests */,
+				4656059E2EE401D20060C14D /* TaikUITests */,
+				465605C62EE402450060C14D /* TaikKeyboard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		465605852EE401D00060C14D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		465605932EE401D20060C14D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4656059D2EE401D20060C14D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		465605C52EE402450060C14D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		465605832EE401D00060C14D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		465605912EE401D20060C14D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4656059B2EE401D20060C14D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		465605C32EE402450060C14D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		465605972EE401D20060C14D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 465605862EE401D00060C14D /* Taik */;
+			targetProxy = 465605962EE401D20060C14D /* PBXContainerItemProxy */;
+		};
+		465605A12EE401D20060C14D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 465605862EE401D00060C14D /* Taik */;
+			targetProxy = 465605A02EE401D20060C14D /* PBXContainerItemProxy */;
+		};
+		465605CD2EE402450060C14D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 465605C62EE402450060C14D /* TaikKeyboard */;
+			targetProxy = 465605CC2EE402450060C14D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		465605A72EE401D20060C14D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = G9ZN95U2YH;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		465605A82EE401D20060C14D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = G9ZN95U2YH;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		465605AA2EE401D20060C14D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Taik/Taik.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G9ZN95U2YH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Taik/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Taik needs microphone access to transcribe your speech.";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.carrel.Taik;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		465605AB2EE401D20060C14D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Taik/Taik.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G9ZN95U2YH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Taik/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Taik needs microphone access to transcribe your speech.";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.carrel.Taik;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+		465605AD2EE401D20060C14D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G9ZN95U2YH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.carrel.TaikTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Taik.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Taik";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		465605AE2EE401D20060C14D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G9ZN95U2YH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.carrel.TaikTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Taik.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Taik";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+		465605B02EE401D20060C14D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G9ZN95U2YH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.carrel.TaikUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = Taik;
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		465605B12EE401D20060C14D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G9ZN95U2YH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.carrel.TaikUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = Taik;
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+		465605D12EE402450060C14D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TaikKeyboard/TaikKeyboard.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G9ZN95U2YH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaikKeyboard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TaikKeyboard;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.carrel.Taik.TaikKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		465605D22EE402450060C14D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TaikKeyboard/TaikKeyboard.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G9ZN95U2YH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaikKeyboard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TaikKeyboard;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.carrel.Taik.TaikKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		465605822EE401D00060C14D /* Build configuration list for PBXProject "Taik" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				465605A72EE401D20060C14D /* Debug */,
+				465605A82EE401D20060C14D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		465605A92EE401D20060C14D /* Build configuration list for PBXNativeTarget "Taik" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				465605AA2EE401D20060C14D /* Debug */,
+				465605AB2EE401D20060C14D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		465605AC2EE401D20060C14D /* Build configuration list for PBXNativeTarget "TaikTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				465605AD2EE401D20060C14D /* Debug */,
+				465605AE2EE401D20060C14D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		465605AF2EE401D20060C14D /* Build configuration list for PBXNativeTarget "TaikUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				465605B02EE401D20060C14D /* Debug */,
+				465605B12EE401D20060C14D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		465605D02EE402450060C14D /* Build configuration list for PBXNativeTarget "TaikKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				465605D12EE402450060C14D /* Debug */,
+				465605D22EE402450060C14D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4656057F2EE401D00060C14D /* Project object */;
+}

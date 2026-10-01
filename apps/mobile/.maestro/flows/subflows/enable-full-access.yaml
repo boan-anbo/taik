@@ -1,0 +1,89 @@
+# Enable Full Access for Taik Keyboard Subflow
+# Assumes: Starting at Settings root, Taik keyboard already added
+# Result: Full Access enabled, returns to Settings root
+
+appId: com.apple.Preferences
+---
+
+# Verify at Settings root
+- assertVisible: "General"
+
+# Navigate: Settings → General → Keyboard → Keyboards → TaikKeyboard
+- tapOn: "General"
+- scrollUntilVisible:
+    element: "Keyboard"
+    direction: DOWN
+- tapOn: "Keyboard"
+- waitForAnimationToEnd:
+    timeout: 1000
+
+- tapOn:
+    text: "Keyboards"
+    index: 1
+- waitForAnimationToEnd:
+    timeout: 1000
+
+# Tap on TaikKeyboard to open its settings
+- tapOn: "TaikKeyboard — Taik"
+- waitForAnimationToEnd:
+    timeout: 2000
+
+# Verify we're on the keyboard settings page
+- assertVisible: "Allow Full Access"
+
+# Enable "Allow Full Access" only if it's currently OFF.
+# Use semantic selection: the switch element is to the right of the label.
+# iOS 18.6+ may not show confirmation dialog - handle both cases.
+- runFlow:
+    when:
+      visible:
+        rightOf:
+          text: "Allow Full Access"
+        checked: false
+    commands:
+      # Tap the switch to enable Full Access
+      - tapOn:
+          rightOf:
+            text: "Allow Full Access"
+          checked: false
+      - waitForAnimationToEnd:
+          timeout: 2000
+      # Handle confirmation dialog if it appears (iOS may not always show it)
+      - runFlow:
+          when:
+            visible: "Allow"
+          commands:
+            - tapOn: "Allow"
+            - waitForAnimationToEnd:
+                timeout: 1000
+
+# Final verification: Full Access must be ON
+- assertVisible:
+    rightOf:
+      text: "Allow Full Access"
+    checked: true
+
+# Navigate back to Settings root
+# From TaikKeyboard settings: back button is "Keyboards"
+- tapOn:
+    text: "Keyboards"
+    index: 0
+- waitForAnimationToEnd:
+    timeout: 1000
+
+# From Keyboards list: back button is "Keyboards"
+- tapOn:
+    text: "Keyboards"
+    index: 0
+- waitForAnimationToEnd:
+    timeout: 1000
+
+# From Keyboard settings: back button is "Back"
+- tapOn: "Back"
+- waitForAnimationToEnd:
+    timeout: 1000
+
+# From General: back button is "Settings"
+- tapOn: "Settings"
+- waitForAnimationToEnd:
+    timeout: 1000

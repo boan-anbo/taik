@@ -1,0 +1,59 @@
+{
+  "expo": {
+    "name": "Taik",
+    "slug": "taik",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "taik",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.carrel.taik",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Taik needs microphone access to transcribe your speech to text.",
+        "NSSpeechRecognitionUsageDescription": "Taik uses speech recognition to convert your voice to text.",
+        "UIBackgroundModes": ["audio"]
+      },
+      "entitlements": {
+        "com.apple.security.application-groups": ["group.app.carrel.taik"]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "app.carrel.taik",
+      "permissions": ["android.permission.RECORD_AUDIO"]
+    },
+    "plugins": [
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow Taik to access your microphone for speech-to-text transcription."
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "17.0"
+          }
+        }
+      ],
+      "./plugins/withKeyboardExtension.js"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "taik-voice"
+      }
+    }
+  }
+}

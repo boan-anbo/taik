@@ -1,0 +1,10 @@
+# Debug - tap Allow Full Access switch using index
+appId: com.apple.Preferences
+---
+
+# Try index 2 which should be the switch element
+- tapOn:
+    text: "Allow Full Access"
+    index: 2
+- waitForAnimationToEnd:
+    timeout: 2000

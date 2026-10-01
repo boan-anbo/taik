@@ -1,0 +1,127 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Taik",
+  "identifier": "app.carrel.taik.dev",
+  "version": "0.1.0",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:5173",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["dmg", "app"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns"
+    ],
+    "macOS": {
+      "minimumSystemVersion": "13.0",
+      "entitlements": "../src-tauri/entitlements.plist"
+    },
+    "resources": []
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Taik",
+        "create": false,
+        "width": 1000,
+        "height": 700,
+        "minWidth": 700,
+        "minHeight": 500,
+        "center": true,
+        "resizable": true,
+        "fullscreen": false,
+        "decorations": true,
+        "transparent": false,
+        "visible": true
+      },
+      {
+        "label": "floating-deck",
+        "title": "Taik Deck",
+        "url": "/deck-panel",
+        "create": false,
+        "width": 320,
+        "height": 200,
+        "minWidth": 200,
+        "minHeight": 100,
+        "maxWidth": 600,
+        "maxHeight": 400,
+        "x": 100,
+        "y": 100,
+        "resizable": true,
+        "fullscreen": false,
+        "decorations": false,
+        "transparent": true,
+        "backgroundColor": "#00000000",
+        "backgroundThrottling": "disabled",
+        "alwaysOnTop": true,
+        "visible": false,
+        "skipTaskbar": true,
+        "shadow": false
+      },
+    {
+      "label": "floating-voice",
+      "title": "Taik Voice",
+      "url": "/voice-panel",
+      "create": false,
+        "width": 336,
+        "height": 108,
+        "minWidth": 240,
+        "minHeight": 56,
+        "maxWidth": 640,
+        "maxHeight": 260,
+        "x": 100,
+        "y": 300,
+        "resizable": true,
+        "fullscreen": false,
+        "decorations": false,
+        "transparent": true,
+        "backgroundColor": "#00000000",
+        "alwaysOnTop": true,
+        "visible": false,
+      "skipTaskbar": true,
+      "shadow": false
+    },
+    {
+      "label": "floating-meter",
+      "title": "Taik Mic Meter",
+      "url": "/voice-meter",
+      "create": false,
+      "width": 320,
+      "height": 120,
+      "minWidth": 240,
+      "minHeight": 80,
+      "maxWidth": 520,
+      "maxHeight": 200,
+      "x": 120,
+      "y": 320,
+      "resizable": false,
+      "fullscreen": false,
+      "decorations": false,
+      "transparent": true,
+      "backgroundColor": "#00000000",
+      "backgroundThrottling": "disabled",
+      "alwaysOnTop": true,
+      "visible": false,
+      "skipTaskbar": true,
+      "shadow": false
+    }
+  ],
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self' ipc: http://ipc.localhost wss://api.soniox.com https://api.soniox.com wss://stt-rt.soniox.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: mediastream:"
+    },
+    "trayIcon": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true,
+      "id": "main-tray"
+    },
+    "macOSPrivateApi": true
+  },
+  "plugins": {}
+}

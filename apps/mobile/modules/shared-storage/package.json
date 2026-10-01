@@ -1,0 +1,20 @@
+{
+  "name": "@taik/shared-storage",
+  "version": "1.0.0",
+  "description": "Shared storage module for App Groups IPC between main app and keyboard extension",
+  "main": "index.js",
+  "types": "src/index.ts",
+  "license": "MIT",
+  "author": "Taik",
+  "homepage": "https://github.com/user/taik",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/user/taik.git"
+  },
+  "peerDependencies": {
+    "expo": "*"
+  },
+  "devDependencies": {
+    "expo-modules-core": "~2.0.0"
+  }
+}

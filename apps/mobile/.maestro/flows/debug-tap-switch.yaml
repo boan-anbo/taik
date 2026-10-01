@@ -1,0 +1,10 @@
+# Debug - tap the switch directly using coordinates
+appId: com.apple.Preferences
+---
+
+# Switch bounds: [315,124][366,155]
+# Center point: x=340, y=140
+- tapOn:
+    point: "340,140"
+- waitForAnimationToEnd:
+    timeout: 2000

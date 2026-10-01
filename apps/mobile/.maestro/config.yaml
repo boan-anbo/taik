@@ -1,0 +1,10 @@
+# Maestro E2E Test Configuration
+# https://maestro.mobile.dev/
+
+appId: app.carrel.taik
+
+# Environment variables passed to the app
+# Note: EXPO_PUBLIC_SONIOX_API_KEY should be set in your shell environment
+# or uncomment and set below for testing
+# env:
+#   EXPO_PUBLIC_SONIOX_API_KEY: "your-api-key-here"

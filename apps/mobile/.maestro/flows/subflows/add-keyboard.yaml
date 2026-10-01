@@ -1,0 +1,54 @@
+# Add Taik Keyboard Subflow
+# Assumes: Starting at Settings root
+# Result: Taik keyboard added, returns to Settings root
+
+appId: com.apple.Preferences
+---
+
+# Verify at Settings root
+- assertVisible: "General"
+
+# Navigate: Settings → General → Keyboard → Keyboards → Add New Keyboard
+- tapOn: "General"
+- scrollUntilVisible:
+    element: "Keyboard"
+    direction: DOWN
+- tapOn: "Keyboard"
+- waitForAnimationToEnd:
+    timeout: 1000
+
+- tapOn:
+    text: "Keyboards"
+    index: 1
+- waitForAnimationToEnd:
+    timeout: 1000
+
+# Tap "Add New Keyboard"
+- tapOn: "Add New Keyboard"
+- waitForAnimationToEnd:
+    timeout: 1000
+
+# Find and tap Taik in third-party keyboards section
+- scrollUntilVisible:
+    element: "Taik"
+    direction: DOWN
+    timeout: 5000
+- tapOn: "Taik"
+- waitForAnimationToEnd:
+    timeout: 1000
+
+# Should be back at keyboards list with TaikKeyboard now visible
+- assertVisible: "TaikKeyboard — Taik"
+
+# Navigate back to Settings root
+- tapOn:
+    text: "Keyboards"
+    index: 0
+- waitForAnimationToEnd:
+    timeout: 1000
+- tapOn: "Back"
+- waitForAnimationToEnd:
+    timeout: 1000
+- tapOn: "Settings"
+- waitForAnimationToEnd:
+    timeout: 1000

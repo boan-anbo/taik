@@ -1,0 +1,9 @@
+# Test with percentage coordinates
+appId: com.apple.Preferences
+---
+
+# Switch center: x=340/402=84.6%, y=140/874=16%
+- tapOn:
+    point: "85%,16%"
+- waitForAnimationToEnd:
+    timeout: 2000

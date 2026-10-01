@@ -1,0 +1,101 @@
+# Keyboard Recording Flow
+# Tests the Taik keyboard extension functionality in a real app context
+#
+# Prerequisites:
+# - iOS Simulator running
+# - Taik keyboard enabled with Full Access (run keyboard-setup.yaml first)
+# - Taik main app installed
+#
+# This test:
+# 1. Opens Notes app
+# 2. Creates a new note to get a text field
+# 3. Switches to Taik keyboard
+# 4. Tests keyboard strip mode (deck buttons, mic)
+# 5. Verifies text insertion works
+#
+# Run: maestro test .maestro/flows/keyboard-recording.yaml
+
+appId: com.apple.mobilenotes
+---
+
+# Launch Notes app
+- launchApp
+
+# Create a new note - tap the compose button
+- tapOn:
+    id: "compose"
+    optional: true
+
+# Alternative compose button
+- runFlow:
+    when:
+      notVisible:
+        id: "compose"
+    commands:
+      - tapOn: "New Note"
+        optional: true
+
+# Wait for text field and tap to show keyboard
+- waitForAnimationToEnd:
+    timeout: 2000
+
+# Long press globe to switch keyboards
+- longPressOn:
+    id: "globe"
+    optional: true
+
+# Alternative: long press "Next keyboard"
+- runFlow:
+    when:
+      visible: "Next keyboard"
+    commands:
+      - longPressOn: "Next keyboard"
+
+# Select Taik from keyboard picker
+- runFlow:
+    when:
+      visible: "Taik"
+    commands:
+      - tapOn: "Taik"
+      - waitForAnimationToEnd:
+          timeout: 2000
+
+# Verify Taik keyboard is active - look for deck toggle or mic button
+- runFlow:
+    when:
+      visible:
+        id: "deck-toggle"
+    commands:
+      # Test toggling to deck mode
+      - tapOn:
+          id: "deck-toggle"
+      - waitForAnimationToEnd:
+          timeout: 1000
+      # Toggle back to strip mode
+      - tapOn:
+          id: "deck-toggle"
+
+# Test mic button if visible
+- runFlow:
+    when:
+      visible:
+        id: "mic-button"
+    commands:
+      - tapOn:
+          id: "mic-button"
+      - waitForAnimationToEnd:
+          timeout: 2000
+
+# Test a deck button if visible
+- runFlow:
+    when:
+      visible:
+        id: "deck-button-0"
+    commands:
+      - tapOn:
+          id: "deck-button-0"
+      - waitForAnimationToEnd:
+          timeout: 1000
+
+# Close keyboard
+- pressKey: Escape

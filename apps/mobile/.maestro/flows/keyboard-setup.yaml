@@ -1,0 +1,89 @@
+# Keyboard Setup Flow
+# Enables the Taik keyboard extension with Full Access
+#
+# This flow is idempotent - can be run multiple times safely.
+#
+# Run: maestro test .maestro/flows/keyboard-setup.yaml
+
+appId: com.apple.Preferences
+---
+
+# Launch Settings app fresh
+- launchApp
+
+# Verify we're in Settings
+- assertVisible: "Settings"
+- assertVisible: "General"
+
+# Navigate: Settings → General → Keyboard → Keyboards list
+- tapOn: "General"
+- scrollUntilVisible:
+    element: "Keyboard"
+    direction: DOWN
+- tapOn: "Keyboard"
+- waitForAnimationToEnd:
+    timeout: 1000
+
+# Tap the Keyboards row (shows count like "3 >")
+- tapOn:
+    text: "Keyboards"
+    index: 1
+- waitForAnimationToEnd:
+    timeout: 1000
+
+# Now at Keyboards list - check if TaikKeyboard exists
+- runFlow:
+    when:
+      notVisible: "TaikKeyboard — Taik"
+    commands:
+      # Go back to Settings root
+      - tapOn:
+          text: "Keyboards"
+          index: 0
+      - waitForAnimationToEnd:
+          timeout: 1000
+      - tapOn: "Back"
+      - waitForAnimationToEnd:
+          timeout: 1000
+      - tapOn: "Settings"
+      - waitForAnimationToEnd:
+          timeout: 1000
+      # Add the keyboard (ends at Settings root)
+      - runFlow: subflows/add-keyboard.yaml
+      # Now enable full access (starts from Settings root)
+      - runFlow: subflows/enable-full-access.yaml
+
+# If TaikKeyboard already exists, just enable full access
+- runFlow:
+    when:
+      visible: "TaikKeyboard — Taik"
+    commands:
+      # Go back to Settings root
+      - tapOn:
+          text: "Keyboards"
+          index: 0
+      - waitForAnimationToEnd:
+          timeout: 1000
+      - tapOn: "Back"
+      - waitForAnimationToEnd:
+          timeout: 1000
+      - tapOn: "Settings"
+      - waitForAnimationToEnd:
+          timeout: 1000
+      # Enable full access
+      - runFlow: subflows/enable-full-access.yaml
+
+# Final verification - navigate to keyboards list and confirm Taik
+- tapOn: "General"
+- scrollUntilVisible:
+    element: "Keyboard"
+    direction: DOWN
+- tapOn: "Keyboard"
+- waitForAnimationToEnd:
+    timeout: 1000
+- tapOn:
+    text: "Keyboards"
+    index: 1
+- waitForAnimationToEnd:
+    timeout: 1000
+- assertVisible: "TaikKeyboard — Taik"

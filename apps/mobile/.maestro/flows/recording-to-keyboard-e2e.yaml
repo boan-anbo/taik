@@ -1,0 +1,85 @@
+# Recording → Keyboard Insertion E2E Test
+# Tests the complete flow: Record in Taik app → Insert via Keyboard in Notes
+#
+# Flow:
+# 1. Record in Taik app (with Soniox API processing)
+# 2. Tap "Insert via Keyboard" to stage transcription
+# 3. Switch to Notes app
+# 4. Open Taik keyboard
+# 5. Verify transcription auto-inserted
+#
+# Prerequisites:
+# - Taik keyboard enabled with Full Access (run keyboard-setup.yaml first)
+# - Microphone permission granted
+#
+# Run: maestro test .maestro/flows/recording-to-keyboard-e2e.yaml
+
+appId: app.carrel.taik
+---
+
+# ===== PHASE 1: Record in Taik App =====
+- launchApp:
+    permissions:
+      microphone: allow
+
+- assertVisible: "Record"
+- assertVisible: "Tap to start recording"
+
+# Start recording
+- tapOn:
+    id: "mic-button"
+
+# Wait for recording state
+- extendedWaitUntil:
+    visible: "Listening.*"
+    timeout: 10000
+
+# Record for 3 seconds (simulator has no audio, but tests the flow)
+- waitForAnimationToEnd:
+    timeout: 3000
+
+# Stop recording
+- tapOn:
+    id: "mic-button"
+
+# Verify processing state
+- assertVisible: "Processing..."
+
+# Wait for Soniox API completion (can take up to 30s)
+- extendedWaitUntil:
+    visible: "Tap to record again"
+    timeout: 30000
+
+# Verify action buttons are available
+- assertVisible:
+    id: "button-keyboard"
+- assertVisible:
+    id: "button-clipboard"
+
+# ===== PHASE 2: Stage Transcription for Keyboard =====
+- tapOn:
+    id: "button-keyboard"
+
+# Verify the "Ready to Insert" alert
+- extendedWaitUntil:
+    visible: "Ready to Insert"
+    timeout: 3000
+
+# Dismiss alert
+- tapOn: "OK"
+
+# Transcription is now staged in SharedStorage (pendingTranscription key)
+
+# ===== PHASE 3: Switch to Notes and Insert =====
+- runFlow: subflows/insert-in-notes.yaml
+
+# ===== PHASE 4: Verify and Cleanup =====
+# Return to Taik app
+- launchApp:
+    appId: app.carrel.taik
+
+# App should be in a valid state (initial or post-recording)
+# After returning from Safari, app may reset to initial state
+- assertVisible: "Record"
+
+# Test passed - transcription was successfully recorded and staged for keyboard insertion

@@ -1,0 +1,27 @@
+{
+  "name": "@taik/test-fixtures",
+  "version": "0.1.0",
+  "description": "Shared test fixtures and assets for Taik cross-platform testing",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./assets/*": "./assets/*"
+  },
+  "files": [
+    "dist",
+    "assets"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}

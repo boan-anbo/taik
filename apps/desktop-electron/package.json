@@ -1,0 +1,85 @@
+{
+  "name": "taik-desktop-electron",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "dev": "npm run build:main && concurrently -k -n renderer,electron -c cyan,magenta \"vite\" \"wait-on tcp:5174 && npm run dev:electron\"",
+    "dev:electron": "cross-env NODE_ENV=development ELECTRON_RENDERER_URL=http://127.0.0.1:5174 electron dist/main/main.js",
+    "build": "npm run build:renderer && npm run build:main && npm run build:electron",
+    "build:renderer": "vite build",
+    "build:native": "node scripts/build-native.mjs",
+    "build:main": "npm run build:native && tsc -p tsconfig.main.json && tsc -p tsconfig.preload.json",
+    "fast": "npm run build:renderer && npm run build:main && cross-env NODE_ENV=production electron dist/main/main.js",
+    "build:electron": "rm -rf release && electron-builder --mac dmg",
+    "build:app": "rm -rf release && npm run build:renderer && npm run build:main && electron-builder --mac dir",
+    "build:app:unsigned": "CSC_IDENTITY_AUTO_DISCOVERY=false npm run build:app",
+    "run:app": "open release/mac-arm64/Taik.app",
+    "preview:unsigned": "npm run build:app:unsigned && npm run run:app",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@taik/capabilities": "*",
+    "@taik/domain": "*",
+    "@taik/platform-web": "*",
+    "@taik/speech-engine": "*",
+    "@taik/ui-dom": "*",
+    "@taik/ui-tokens": "*",
+    "electron-store": "^10.1.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-router-dom": "^7.0.0",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.2.1",
+    "cross-env": "^7.0.3",
+    "electron": "34.5.8",
+    "electron-builder": "^24.13.3",
+    "typescript": "^5.7.0",
+    "vite": "^6.4.1",
+    "wait-on": "^8.0.3"
+  },
+  "build": {
+    "directories": {
+      "output": "release"
+    },
+    "electronVersion": "34.5.8",
+    "appId": "app.carrel.taik",
+    "productName": "Taik",
+    "files": [
+      "dist/main/**",
+      "dist/preload/**",
+      "dist/renderer/**",
+      "dist/native/**"
+    ],
+    "asarUnpack": [
+      "dist/native/**"
+    ],
+    "mac": {
+      "identity": "Bo An (G9ZN95U2YH)",
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.inherit.plist",
+      "hardenedRuntime": true,
+      "target": [
+        "dmg"
+      ],
+      "extendInfo": {
+        "NSMicrophoneUsageDescription": "Taik needs microphone access to record audio for speech-to-text transcription.",
+        "NSAppleEventsUsageDescription": "Taik may use automation to paste text into other applications."
+      },
+      "category": "public.app-category.productivity"
+    },
+    "dmg": {
+      "sign": false
+    },
+    "extraMetadata": {
+      "main": "dist/main/main.js"
+    }
+  }
+}

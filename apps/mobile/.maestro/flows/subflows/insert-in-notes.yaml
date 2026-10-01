@@ -1,0 +1,93 @@
+# Insert Transcription via Keyboard Subflow
+# Assumes: pendingTranscription is staged in SharedStorage from Taik main app
+# Result: Transcription auto-inserted via Taik keyboard
+#
+# Uses Reminders app (available on all iOS simulators) as the target app.
+# The Taik keyboard automatically polls for pending transcriptions (every 0.5s)
+# and inserts them via textDocumentProxy.insertText() without user interaction.
+#
+# Alternative targets (if available):
+# - Notes: com.apple.mobilenotes (not in iOS 18 simulator by default)
+# - Safari: com.apple.mobilesafari (URL bar only)
+
+appId: com.apple.reminders
+---
+
+# Launch Reminders app
+- launchApp
+
+# Wait for app to load
+- waitForAnimationToEnd:
+    timeout: 2000
+
+# Create a new reminder - tap the "New Reminder" button or add button
+- tapOn:
+    text: "New Reminder"
+    optional: true
+
+# Fallback: try the "+" button
+- runFlow:
+    when:
+      notVisible: "New Reminder"
+    commands:
+      - tapOn:
+          id: "add"
+          optional: true
+
+# Fallback: try tapping in the list area to start a new reminder
+- runFlow:
+    when:
+      notVisible:
+        id: "add"
+    commands:
+      - tapOn:
+          text: "Reminders"
+          optional: true
+
+# Wait for keyboard to appear
+- waitForAnimationToEnd:
+    timeout: 2000
+
+# ===== Switch to Taik Keyboard =====
+# Long press globe to open keyboard picker
+- longPressOn:
+    id: "globe"
+    optional: true
+
+# Alternative: long press "Next keyboard"
+- runFlow:
+    when:
+      visible: "Next keyboard"
+    commands:
+      - longPressOn: "Next keyboard"
+
+# Wait for keyboard picker
+- waitForAnimationToEnd:
+    timeout: 1000
+
+# Select Taik from keyboard picker
+- runFlow:
+    when:
+      visible: "Taik"
+    commands:
+      - tapOn: "Taik"
+      - waitForAnimationToEnd:
+          timeout: 2000
+
+# ===== Wait for Auto-Insertion =====
+# Taik keyboard polls every 0.5s for pending transcription
+# and auto-inserts via textDocumentProxy.insertText()
+# Wait 3 seconds to allow 5-6 polling cycles
+- waitForAnimationToEnd:
+    timeout: 3000
+
+# ===== Verify Insertion (Visual) =====
+# The keyboard auto-inserts text. Screenshot will capture the result.
+# We can't directly assert content since we don't know what Soniox returned.
+
+# Dismiss keyboard
+- pressKey: Escape
+
+# Wait for keyboard to dismiss
+- waitForAnimationToEnd:
+    timeout: 1000

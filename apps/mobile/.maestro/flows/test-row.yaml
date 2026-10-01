@@ -1,0 +1,8 @@
+# Test - tap the entire row (first match, which is the container)
+appId: com.apple.Preferences
+---
+
+# Tap the row - no index means first match (the container row)
+- tapOn: "Allow Full Access"
+- waitForAnimationToEnd:
+    timeout: 2000

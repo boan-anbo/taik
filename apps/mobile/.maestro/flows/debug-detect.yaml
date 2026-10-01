@@ -1,0 +1,21 @@
+# Debug - test visibility detection
+appId: com.apple.Preferences
+---
+
+- launchApp
+- tapOn: "General"
+- scrollUntilVisible:
+    element: "Keyboard"
+    direction: DOWN
+- tapOn: "Keyboard"
+- waitForAnimationToEnd:
+    timeout: 2000
+
+- tapOn:
+    text: "Keyboards"
+    index: 1
+- waitForAnimationToEnd:
+    timeout: 2000
+
+# Test different selectors
+- assertVisible: "TaikKeyboard"

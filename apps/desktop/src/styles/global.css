@@ -1,0 +1,207 @@
+/**
+ * Global Styles
+ */
+
+:root {
+  /* Design tokens as CSS variables */
+  --color-background: #ffffff;
+  --color-surface: #f5f5f5;
+  --color-surface-alt: #f0f8ff;
+  --color-border-subtle: #e0e8f0;
+  --color-text: #333333;
+  --color-text-subtle: #666666;
+  --color-brand: #007aff;
+  --color-danger: #dc2626;
+  --color-danger-surface: #fee2e2;
+  --color-recording: #ff3b30;
+  --color-processing: #ff9500;
+  --color-success: #34c759;
+
+  /* System grays */
+  --color-system-gray: #8e8e93;
+  --color-system-gray-2: #aeaeb2;
+  --color-system-gray-3: #c7c7cc;
+  --color-system-gray-4: #d1d1d6;
+  --color-system-gray-5: #e5e5ea;
+  --color-system-gray-6: #f2f2f7;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 20px;
+  --space-xxl: 24px;
+  --space-xxxl: 32px;
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Font sizes */
+  --font-size-xs: 13px;
+  --font-size-sm: 14px;
+  --font-size-md: 15px;
+  --font-size-lg: 16px;
+  --font-size-xl: 17px;
+  --font-size-title: 20px;
+
+  /* Font weights */
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+/* Base reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, sans-serif;
+  font-size: var(--font-size-md);
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* App container */
+.app-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-background);
+}
+
+/* Sidebar navigation */
+.sidebar {
+  width: 200px;
+  min-width: 200px;
+  background-color: var(--color-system-gray-6);
+  border-right: 1px solid var(--color-border-subtle);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-sm);
+}
+
+.sidebar-header {
+  padding: var(--space-md);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  transition: background-color 0.15s ease;
+}
+
+.nav-item:hover {
+  background-color: var(--color-system-gray-5);
+}
+
+.nav-item.active {
+  background-color: var(--color-brand);
+  color: white;
+}
+
+.nav-icon {
+  font-size: 18px;
+  width: 24px;
+  text-align: center;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  overflow: auto;
+  background-color: var(--color-background);
+}
+
+/* Screen container */
+.screen {
+  height: 100%;
+  padding: var(--space-xl);
+}
+
+.screen-header {
+  margin-bottom: var(--space-xl);
+}
+
+.screen-title {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-system-gray-4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-system-gray-3);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+/* Button base */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Input base */
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}

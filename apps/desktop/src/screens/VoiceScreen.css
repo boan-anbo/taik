@@ -1,0 +1,121 @@
+/**
+ * Voice Screen Styles
+ * Floating voice window appearance
+ */
+
+.voice-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  font-family: "Avenir Next", "Avenir", "Helvetica Neue", sans-serif;
+  color: var(--voice-text);
+  overflow: hidden;
+  --voice-bg: var(--color-background);
+  --voice-border: var(--color-border-subtle);
+  --voice-text: var(--color-text);
+  --voice-muted: var(--color-text-subtle);
+}
+
+.voice-screen.theme-light {
+  --voice-bg: #ffffff;
+  --voice-border: #e6e9ef;
+  --voice-text: #111827;
+  --voice-muted: #6b7280;
+}
+
+.voice-screen.theme-dark {
+  --voice-bg: #0f1115;
+  --voice-border: #1f2937;
+  --voice-text: #f8fafc;
+  --voice-muted: #9ca3af;
+}
+
+.voice-shell {
+  position: relative;
+  width: calc(100% - 14px);
+  height: calc(100% - 14px);
+  padding: 10px 12px;
+  border-radius: 18px;
+  background: var(--voice-bg);
+  border: 1px solid var(--voice-border);
+  box-shadow: none;
+  backdrop-filter: none;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+}
+
+.voice-screen.layout-strip .voice-shell {
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.voice-screen.layout-strip .voice-close-btn {
+  display: none;
+}
+
+.voice-shell::before {
+  content: none;
+}
+
+.voice-shell::after {
+  content: none;
+}
+
+.voice-shell.dragging {
+  box-shadow: none;
+}
+
+@keyframes floatGlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate3d(6px, -8px, 0) scale(1.02);
+    opacity: 0.9;
+  }
+}
+
+.voice-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 7px;
+  background: rgba(148, 163, 184, 0.12);
+  color: var(--voice-muted);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  z-index: 5;
+}
+
+.voice-close-btn:hover {
+  background: rgba(148, 163, 184, 0.18);
+  color: var(--voice-text);
+  transform: translateY(-1px);
+}
+
+.voice-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+}

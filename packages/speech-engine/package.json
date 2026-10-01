@@ -1,0 +1,57 @@
+{
+  "name": "@taik/speech-engine",
+  "version": "0.1.0",
+  "description": "Provider-agnostic speech-to-text engine for Taik",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "react-native": "./dist/index.react-native.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./provider": {
+      "import": "./dist/provider/index.js",
+      "types": "./dist/provider/index.d.ts"
+    },
+    "./soniox": {
+      "react-native": "./dist/index.react-native.js",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "react-native": "./dist/index.react-native.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:bun": "bun build ./src/index.ts --outdir ./dist --target=browser && tsc --emitDeclarationOnly",
+    "build:node": "bun build ./src/index.ts --outdir ./dist --target=node",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "optionalDependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/ws": "^8.5.13",
+    "bun-types": "^1.1.0",
+    "typescript": "^5.7.0",
+    "vitest": "^4.0.15"
+  },
+  "peerDependencies": {
+    "@cloudflare/workers-types": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@cloudflare/workers-types": {
+      "optional": true
+    }
+  }
+}

@@ -1,0 +1,7 @@
+# Debug - tap Allow button on dialog
+appId: com.apple.Preferences
+---
+
+- tapOn: "Allow"
+- waitForAnimationToEnd:
+    timeout: 1000

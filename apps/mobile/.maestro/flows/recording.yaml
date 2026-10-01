@@ -1,0 +1,79 @@
+# Basic Recording Flow E2E Test
+# Tests the complete recording lifecycle:
+# Launch → Start recording → Stop → Verify transcript → Copy to clipboard
+#
+# Prerequisites:
+# - iOS Simulator running with app installed
+# - EXPO_PUBLIC_SONIOX_API_KEY environment variable set
+# - Microphone permission granted (Maestro handles this automatically)
+#
+# Run with: maestro test .maestro/flows/recording.yaml
+
+appId: app.carrel.taik
+---
+
+# Grant microphone permission when prompted
+- launchApp:
+    permissions:
+      microphone: allow
+
+# Verify app launched and shows initial state
+- assertVisible: "Record"
+- assertVisible: "Tap to start recording"
+
+# Start recording by tapping the mic button
+- tapOn:
+    id: "mic-button"
+
+# Wait for recording state (may briefly show "Starting..." first)
+- extendedWaitUntil:
+    visible: "Listening.*"
+    timeout: 10000
+
+# Let it record for a few seconds
+# Note: In simulator, there's no real audio input, but this tests the flow
+- waitForAnimationToEnd:
+    timeout: 3000
+
+# Stop recording by tapping the mic button again
+- tapOn:
+    id: "mic-button"
+
+# Verify processing state
+- assertVisible: "Processing..."
+
+# Wait for completion - Soniox API response can take a while
+- extendedWaitUntil:
+    visible: "Tap to record again"
+    timeout: 30000
+
+# Verify action buttons are visible after completion
+- assertVisible:
+    id: "button-keyboard"
+- assertVisible:
+    id: "button-clipboard"
+
+# Test copy to clipboard functionality
+- tapOn:
+    id: "button-clipboard"
+
+# Verify the "Copied" alert appears
+- assertVisible: "Copied"
+
+# Dismiss the alert
+- tapOn: "OK"
+
+# Test keyboard insertion button (just verify it's tappable)
+- tapOn:
+    id: "button-keyboard"
+
+# Verify the "Ready to Insert" alert appears
+- assertVisible: "Ready to Insert"
+
+# Dismiss the alert
+- tapOn: "OK"
+
+# Verify we can start a new recording
+- assertVisible: "Tap to record again"
+
+# Test completed successfully

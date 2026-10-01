@@ -1,0 +1,10 @@
+# Test with checked selector
+appId: com.apple.Preferences
+---
+
+# Tap on unchecked Allow Full Access toggle
+- tapOn:
+    text: "Allow Full Access"
+    checked: false
+- waitForAnimationToEnd:
+    timeout: 2000

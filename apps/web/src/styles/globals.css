@@ -1,0 +1,85 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Brand Colors (from @taik/ui-tokens) */
+  --color-brand: #007AFF;
+  --color-danger: #DC2626;
+  --color-danger-surface: #FEE2E2;
+  --color-recording: #FF3B30;
+  --color-processing: #FF9500;
+  --color-success: #34C759;
+  --color-warning: #FF9500;
+
+  /* Semantic Colors */
+  --color-background: #FFFFFF;
+  --color-foreground: #333333;
+  --color-muted: #F5F5F5;
+  --color-muted-foreground: #666666;
+  --color-border: #E0E8F0;
+
+  /* Card */
+  --color-card: #FFFFFF;
+  --color-card-foreground: #333333;
+
+  /* Primary (brand) */
+  --color-primary: #007AFF;
+  --color-primary-foreground: #FFFFFF;
+
+  /* Secondary */
+  --color-secondary: #F5F5F5;
+  --color-secondary-foreground: #333333;
+
+  /* Destructive */
+  --color-destructive: #DC2626;
+  --color-destructive-foreground: #FFFFFF;
+
+  /* Accent */
+  --color-accent: #F0F8FF;
+  --color-accent-foreground: #333333;
+
+  /* Input/Ring */
+  --color-input: #E5E5EA;
+  --color-ring: #007AFF;
+
+  /* iOS System Grays */
+  --color-gray-1: #8E8E93;
+  --color-gray-2: #AEAEB2;
+  --color-gray-3: #C7C7CC;
+  --color-gray-4: #D1D1D6;
+  --color-gray-5: #E5E5EA;
+  --color-gray-6: #F2F2F7;
+
+  /* Spacing (converted to rem) */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.25rem;
+  --spacing-2xl: 1.5rem;
+  --spacing-3xl: 2rem;
+
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-pill: 9999px;
+
+  /* Font Sizes */
+  --font-size-xs: 0.8125rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 0.9375rem;
+  --font-size-lg: 1rem;
+  --font-size-xl: 1.0625rem;
+  --font-size-title: 1.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}

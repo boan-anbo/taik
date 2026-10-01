@@ -1,0 +1,42 @@
+# Minimal test - add keyboard and enable full access
+appId: com.apple.Preferences
+---
+
+- launchApp
+- tapOn: "General"
+- scrollUntilVisible:
+    element: "Keyboard"
+    direction: DOWN
+- tapOn: "Keyboard"
+- waitForAnimationToEnd:
+    timeout: 1000
+- tapOn:
+    text: "Keyboards"
+    index: 1
+- waitForAnimationToEnd:
+    timeout: 1000
+- tapOn: "Add New Keyboard"
+- waitForAnimationToEnd:
+    timeout: 1000
+- tapOn: "Taik"
+- waitForAnimationToEnd:
+    timeout: 1000
+
+# Now at keyboards list, tap TaikKeyboard
+- tapOn: "TaikKeyboard — Taik"
+- waitForAnimationToEnd:
+    timeout: 1000
+
+# Tap switch at coordinates
+- tapOn:
+    point: "340,140"
+- waitForAnimationToEnd:
+    timeout: 2000
+
+# Tap Allow on dialog
+- tapOn: "Allow"
+- waitForAnimationToEnd:
+    timeout: 1000
+
+# Verify switch is on
+- assertVisible: "Allow Full Access"

@@ -1,0 +1,86 @@
+/**
+ * Voice Screen Styles
+ * Floating voice window appearance
+ */
+
+.voice-screen {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.95);
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Header / Drag handle */
+.voice-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.3);
+  user-select: none;
+  -webkit-app-region: drag;
+}
+
+.voice-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.voice-close-btn {
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+  -webkit-app-region: no-drag;
+  line-height: 1;
+}
+
+.voice-close-btn:hover {
+  background: #ff5f57;
+  color: #fff;
+}
+
+/* Content area */
+.voice-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  overflow: hidden;
+}
+
+/* Override voice widget colors for dark background */
+.voice-screen .voice-status {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.voice-screen .voice-preview {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.voice-screen .voice-transcript {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.voice-screen .voice-error {
+  background: rgba(220, 38, 38, 0.2);
+  color: #FCA5A5;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Microphone access for audio recording -->
+    <key>com.apple.security.device.audio-input</key>
+    <true/>
+    <!-- Accessibility API for direct text insertion -->
+    <key>com.apple.security.automation.apple-events</key>
+    <true/>
+    <!-- Allow outbound network connections for Soniox API -->
+    <key>com.apple.security.network.client</key>
+    <true/>
+</dict>
+</plist>

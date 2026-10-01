@@ -1,0 +1,35 @@
+{
+  "name": "taik",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/desktop",
+    "apps/mobile",
+    "apps/web"
+  ],
+  "scripts": {
+    "test": "npm test --workspaces --if-present",
+    "test:mobile": "npm test -w taik-mobile",
+    "desktop:dev": "npm -w taik-desktop run tauri:dev",
+    "desktop:dev:clean": "bash scripts/desktop-dev.sh",
+    "desktop:build": "npm -w taik-desktop run tauri:build",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
+  },
+  "dependencies": {
+    "expo": "~54.0.29",
+    "react": "19.1.0",
+    "react-native": "0.81.5"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3"
+  },
+  "overrides": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3"
+  }
+}

@@ -1,0 +1,24 @@
+# Debug - navigate to TaikKeyboard settings and check UI
+appId: com.apple.Preferences
+---
+
+- launchApp
+- tapOn: "General"
+- scrollUntilVisible:
+    element: "Keyboard"
+    direction: DOWN
+- tapOn: "Keyboard"
+- waitForAnimationToEnd:
+    timeout: 1000
+
+- tapOn:
+    text: "Keyboards"
+    index: 1
+- waitForAnimationToEnd:
+    timeout: 1000
+
+- tapOn: "TaikKeyboard — Taik"
+- waitForAnimationToEnd:
+    timeout: 2000
+
+# Just stop here - we'll take screenshot and check hierarchy

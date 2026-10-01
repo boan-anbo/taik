@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+
+# Native builds
+ios/
+android/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.tsbuildinfo
+
+*storybook.log
+storybook-static

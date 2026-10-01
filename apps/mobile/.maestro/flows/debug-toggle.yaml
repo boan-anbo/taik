@@ -1,0 +1,10 @@
+# Debug - test toggling Allow Full Access
+appId: com.apple.Preferences
+---
+
+# Already at TaikKeyboard settings page, just tap the toggle
+- tapOn:
+    text: "Allow Full Access"
+    index: 0
+- waitForAnimationToEnd:
+    timeout: 2000

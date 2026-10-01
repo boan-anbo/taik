@@ -1,0 +1,20 @@
+{
+  "name": "@taik/audio-capture",
+  "version": "1.0.0",
+  "description": "Real-time audio capture module for speech recognition",
+  "main": "index.js",
+  "types": "src/index.ts",
+  "license": "MIT",
+  "author": "Taik",
+  "homepage": "https://github.com/user/taik",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/user/taik.git"
+  },
+  "peerDependencies": {
+    "expo": "*"
+  },
+  "devDependencies": {
+    "expo-modules-core": "~2.0.0"
+  }
+}

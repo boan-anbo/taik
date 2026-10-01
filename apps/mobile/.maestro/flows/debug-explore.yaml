@@ -1,0 +1,24 @@
+# Debug - go to Add New Keyboard and take screenshot
+appId: com.apple.Preferences
+---
+
+- launchApp
+- tapOn: "General"
+- scrollUntilVisible:
+    element: "Keyboard"
+    direction: DOWN
+- tapOn: "Keyboard"
+- waitForAnimationToEnd:
+    timeout: 1000
+
+- tapOn:
+    text: "Keyboards"
+    index: 1
+- waitForAnimationToEnd:
+    timeout: 1000
+
+- tapOn: "Add New Keyboard"
+- waitForAnimationToEnd:
+    timeout: 2000
+
+# Just wait - we'll take screenshot after
